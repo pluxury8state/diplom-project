@@ -1,0 +1,17 @@
+{% extends 'api/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Главная</title>
+    <meta name="description" content="Магазин экслюзивной одежды" />
+    <link rel="stylesheet" href = "{% static 'css/style.css' %}" type="text/css" media="screen,projection"/>
+{% endblock %}
+
+{% block content %}
+    {% for item in items %}
+        <h1>Появился</h1>
+    {% endfor %}
+
+    {% if prev_page_url %}<a class="button button-primary" href="?page={{ prev_page_url }}"></a>{% endif %}
+    <a class="button disabled" href="">{{ current_page }}</a>
+    {% if next_page_url %}<a class="button button-primary" href="?page={{ next_page_url }}"></a>{% endif %}
+{% endblock %}
